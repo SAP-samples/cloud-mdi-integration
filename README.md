@@ -51,8 +51,8 @@ The architecture involves SAP ECC sending Cost Center data in IDOC format to SAP
 
 	| **Step**    |  **Description** | 
 	| ----------- | ---------------- | 
-    | [Step 1: Prerequisites](./documentation/setup/README.md) | **Complete all the setup required to run the scenario**  | 
-    | [Step 2: Design and Deploy Integration Flow](./documentation/implement/cpi/README.md) | **Design and Deploy iFlow. If you want readymade sample, download from the releases.**  | 
+    | [Step 1: Prepare](./documentation/setup/README.md) | **Complete all the setup required to run the scenario**  | 
+    | [Step 2: Design and Deploy Integration Flow](./documentation/implement/cpi/README.md) | **Design and Deploy iFlow. If you want ready made sample, download from the releases.**  | 
     | [Step 3: Configure SAP ERP(ECC) System](./documentation/implement/ecc/README.md) | **Configure the setup in SAP ECC to trigger the iDOC to integration suite**  | 
     | [Step 4: Configure SAP Successfactor](./documentation/implement/sf/README.md) | **Configure the setup in SAP Successfactor to pull master data from MDI**  |  
     | [Step 5: Run the Scenario](./documentation/complete/test-e2e/README.md) | **Run End to End Scenario**  |  
