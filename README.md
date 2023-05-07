@@ -1,4 +1,5 @@
 ## Master Data Synchornization Between SAP and Legacy System using SAP Cloud Integration
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/cloud-mdi-integration)](https://api.reuse.software/info/github.com/SAP-samples/cloud-mdi-integration)
 
 ## Purpose
 
