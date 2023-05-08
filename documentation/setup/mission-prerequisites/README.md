@@ -37,4 +37,9 @@ The application requires the following [Entitlements and Quotas](https://help.sa
 | Master Data Integration           | sap-integration  |          1    |
 | Master Data Integration (Orchestration) | standard (Application) |   1 |
 
+## Configure SAP Integration Suite and Process Integration Runtime
+
+In order to subscribe to the [**cloud integration**](https://help.sap.com/docs/integration-suite/sap-integration-suite/activating-and-managing-capabilities) capability, you must have subscription of [**Integration Suite**](https://help.sap.com/docs/integration-suite/sap-integration-suite/subscribing-to-integration-suite) with plan enterprise agreement. Once your integration capability is enabled, you should proceed to create a [**Process Integration Runtime**](https://help.sap.com/docs/cloud-integration/sap-cloud-integration/creating-service-instance-and-service-key-for-inbound-authentication) service instance with a plan called integration-flow. Additionally, remember to create a service key with keytype **ClientId/Secret**
+
+For detailed instructions on accessing the cloud integration runtime, please refer to the following blog: "Integration Suite: Accessing Cloud Integration Runtime" available at https://blogs.sap.com/2021/03/22/integration-suite-accessing-cloud-integration-runtime/.
 
