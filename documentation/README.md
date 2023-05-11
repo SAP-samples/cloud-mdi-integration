@@ -21,6 +21,6 @@
 
 - [COMPLETE](../documentation/complete/README.md)
     - [Run the Scenario](./complete/test-e2e/README.md)
-    - [Complete the mission](./complete/complete-mission/README.md)
+    - [Monitoring and Troubleshooting](./complete/monitor/README.md)
 
 <!-- disco-toc-end -->

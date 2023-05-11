@@ -15,4 +15,4 @@ SAP Master Data Integration is a multi-tenant cloud service for master data inte
 * Multi-version Support - Data is shared between compatible versions of entity types in SAP One Domain Model, that is, an instance can be written or updated with a lower version and read with a compatible higher version and vice versa.
 
 For more information, see:
-* [SAP Master Data Integration Documentation)](https://help.sap.com/docs/SAP_MASTER_DATA_INTEGRATION)
+* [SAP Master Data Integration Documentation](https://help.sap.com/docs/SAP_MASTER_DATA_INTEGRATION)
