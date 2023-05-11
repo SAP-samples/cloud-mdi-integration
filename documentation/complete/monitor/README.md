@@ -30,7 +30,7 @@ You can check the status of outbound IDoc and act accordingly. If the IDoc is fa
 
     ![monitor](./images/cpi-mon-msg.png)
 
-4. In the Logs, Choose **Trace** and check if any there is any failure in iflows and act accordingly.
+4. In the logs, Choose **Trace** and check if any there is any failure in iflows and act accordingly.
 
     ![monitor](./images/cpi-mon-traces.png)
 
