@@ -8,7 +8,7 @@ The ERP used was **SAP ECC** running **ODTFINCC 600 SP11** and **SAP_BASIS 753 S
 
 To access the SAP Cloud Integration, you need to create and configure an RFC destination.
 
-1. Login to your SAP ECC system 000 with an administration user using SAP GUI.
+1. Login to your SAP ECC system client with an administration user using SAP GUI.
 2. Call Transaction **SM59**.
 3. Choose **Create**.
 4. In the **Name** field, enter **S4A_CPI_COST_CENTER**.
@@ -33,6 +33,10 @@ To access the SAP Cloud Integration, you need to create and configure an RFC des
     ![ecc](./images/rfc_auth.png)
 
 9. Choose **Save**
+
+10. If the **Connection Test** fails, because of missing trust, you have to import certificate of **process integration service instance** token endpoint and import it into the ECC system through STRUST.
+
+You can follow the step by step guidance on [how to import certificate in ECC](https://github.com/SAP-samples/cloud-extension-ecc-business-process/tree/mission/mission/enable-eventing#download-sap-event-mesh-certificate)
 
 ## 2. Define Logical System
 
