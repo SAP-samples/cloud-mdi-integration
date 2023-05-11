@@ -66,36 +66,73 @@ An integration flow should be associated with an integration package. Here we wi
 
 	![cpi](./images/cpi-add.png)
 
-7. In the **Add Integration Flow** dialog:
-	1. In the **Name** field, enter **iflow for cost center replication**
-	2. Choose **OK**
+## 3. Add Integration Flow(iFlow)
+
+You use this procedure to create an integration flow for enabling communication between two heterogeneous applications or systems. The integration flow is a graphical model that consists of endpoints (systems, interfaces and channels) and flowsteps (activities that enable integration). When you create an integration flow, a corresponding integrated configuration is created in the Integration Directory. 
+
+Here you can either **import our ready made iFlow** and skip all the below steps of manual creation or else **follow the manual iflow creation** for your learning.
+
+### Import Ready Made iFlow**
+
+Download the **Master.Data.Synchornization.Between.SAP.and.Legacy.System.using.SAP.Cloud.Integration.zip** file from [Releases](https://github.com/SAP-samples/cloud-mdi-integration/releases/tag/v1.0.0-alpha) and save into your local file.
+
+1. In the **Add Integration Flow** dialog:
+    1. Choose **Import**
+	2. In the **Integration Flow** field, choose **Browse**
+	3. Choose **Master.Data.Synchornization.Between.SAP.and.Legacy.System.using.SAP.Cloud.Integration.zip** from local file.
+	4. Choose **OK**
+
+	![cpi](./images/cpi-import-iflow.png)
+
+2. Choose **Actions** and then choose **Configure**
+
+	![cpi](./images/cpi-iflow-configure.png)
+
+3. In the **<MDIURI>** field, enter MDI URI you get from service key.
+
+	![cpi](./images/cpi-mdi-key.png)
+
+4. Choose **Deploy**
+
+	![cpi](./images/cpi-iflow-mdi.png)
+
+5. Once the deployment is done, skip all the below steps and directy jump to section 14 **Get the EndPoint of Deployed iflow** .
+
+### Manual Create iFlow**
+
+Here you will create iflow from scratch which will help you in much more better understanding of implementation.
+
+1. In the **Add Integration Flow** dialog:
+    1. Choose **Create**
+	2. In the **Name** field, enter **iflow for cost center replication**
+	3. Choose **OK**
 
 	![cpi](./images/cpi-add-iflow.png)
 
-8. Choose your new integration flow **iflow for cost center replicatio** to enter the integration flow editor.
+2. Choose your new integration flow **iflow for cost center replicatio** to enter the integration flow editor.
 
 	![cpi](./images/cpi-add-editor.png)
 
-9. Within the integration flow editor, switch to the Edit mode by chossing button **Edit** on the top right
+3. Within the integration flow editor, switch to the Edit mode by chossing button **Edit** on the top right
 
 	![cpi](./images/cpi-iflow-edit.png)
 
-10. To have enough space for modeling the integration flow steps, we will rearrange and resize the components
+4. To have enough space for modeling the integration flow steps, we will rearrange and resize the components
 	1. First, select the **Receiver** box and place it below the main process pool.
 	2. Then, select the right edge of the **Integration Process** box and pull it further right to make the box wider.
 	3. Finally, drag and drop the **End Message event** further right so that the whole integration flow stub looks like in the picture below.
 
 	![cpi](./images/cpi-iflow-size.png)
 
-11. In the properties of the **Sender** connection:
+5. In the properties of the **Sender** connection:
 	- In the **Name** field, Enter **ECC**
 
-12. In the properties of the **Receiver** connection:
+6. In the properties of the **Receiver** connection:
 	- In the **Name** field, Enter **MDI**
 
 	![cpi](./images/cpi-iflow-rename.png)
 
-## 3. Maintain the connection to your IDoc
+## 4. Maintain the connection to your IDoc
 
 The IDoc adapter enables SAP Cloud Integration to exchange Intermediate Document (IDoc) messages with systems that support communication via SOAP Web services. Here we will integrate IDoc Adaptor which act an in incoming channel for cost center from SAP ECC.
 
@@ -114,7 +151,7 @@ The IDoc adapter enables SAP Cloud Integration to exchange Intermediate Document
 
 4. Choose **Save**.
 
-## 4. Maintain the Content Modifier
+## 5. Maintain the Content Modifier
 
 The Content Modifier allows you to modify a message by changing the content of the data containers that are involved in message processing (message header, message body, or message exchange). In this section, we will set cost center, key-mapping queries, incoming payload and modify the data accordingly.
 
@@ -131,7 +168,7 @@ The Content Modifier allows you to modify a message by changing the content of t
 4. In the properties of the **Content Modifier**, switch to tab **General**.
 	1. In the **Name Field**, Enter **Content Modifier**.
 
-5. In the properties of the **Content Modifier**, switch to tab **Exchange Modifier**.
+5. In the properties of the **Content Modifier**, switch to tab **Message Header**.
 	1. Choose **Add**.
 	2. Add below property:
 
@@ -139,12 +176,21 @@ The Content Modifier allows you to modify a message by changing the content of t
 		| ----------- | ----------- |  ----------- |  ----------- |  ----------- | 
 		| **Create** | **logsys**  | **XPath** | **/ns2:ODTF_CCTR01/ns2:IDOC/ns2:E101ODTF_S_COST_CENTER_REPL/ns2:BUS_DOC_BS_IDOC_LOG_SYS_ID** |  **java.lang.String** | 
 		| **Create** | **cost** | **XPath** | **/ns2:ODTF_CCTR01/ns2:IDOC/ns2:E101ODTF_S_COST_CENTER_REPL/ns2:E101ODTF_S_COST_CENTER_DATA/ns2:REMOTE_EXTERNAL_OBJECT_ID** | **java.lang.String** | 
+
+![cpi](./images/cpi-content-header.png)
+
+6. In the properties of the **Content Modifier**, switch to tab **Exchange Modifier**.
+	1. Choose **Add**.
+	2. Add below property:
+
+		| **Action**    |  **Name** | **Source Type** |**Source Value** | **Data Type** |
+		| ----------- | ----------- |  ----------- |  ----------- |  ----------- | 
 		| **Create** | **ecc** | **Expression** |  **${in.body}** |  | 
-		| **Create** | **query** | **Expression** | **sourceContext=s4:${property.logsys}:sap.oitc.888&sourceKey=${property.cost}&targetContext=mdi:instanceId** |  | 
+		| **Create** | **query** | **Expression** | **sourceContext=s4:${header.logsys}:sap.oitc.888&sourceKey=${header.cost}&targetContext=mdi:instanceId** |  | 
 
 ![cpi](./images/cpi-content-exchg.png)
 
-6. In the properties of the **Content Modifier**, switch to tab **Message Body**. 
+7. In the properties of the **Content Modifier**, switch to tab **Message Body**. 
 	1. In the **Type** dropdown, choose **Expression**.
 	2. In the **Body** field, enter below:
 
@@ -157,9 +203,9 @@ The Content Modifier allows you to modify a message by changing the content of t
 
 	![cpi](./images/cpi-content1-msg.png)
 
-7. Choose **Save**.
+8. Choose **Save**.
 		
-## 5. Maintain the Request Reply
+## 6. Maintain the Request Reply
 
 Certain integration scenarios might require that the Cloud Integration tenant communicates with an external service, retrieves data from it, and further processes the data. In such cases, you can use the request reply step as an exit to connect to the external service.
 
@@ -180,7 +226,7 @@ Certain integration scenarios might require that the Cloud Integration tenant co
 4. Choose **Save**.
 
 
-## 6. Maintain the connection to your HTTP Adaptor
+## 7. Maintain the connection to your HTTP Adaptor
 
 Use the HTTP receiver adapter to communicate with SAP Master Data Integration using HTTP message protocol.
 
@@ -205,7 +251,7 @@ Use the HTTP receiver adapter to communicate with SAP Master Data Integration us
 
 4. Choose **Save**.
 
-## 7. Maintain the Groovy Script to Set Header of ID.
+## 8. Maintain the Groovy Script to Set Header of ID.
 
 1. If you select the Request Reply **Key - Mapping MDI** of the Integration Process pool, the quick menu appears. Select the **Plus** icon of the quick menu.
 
@@ -241,7 +287,7 @@ Use the HTTP receiver adapter to communicate with SAP Master Data Integration us
 
 6. Choose **Save**.
 
-## 8. Maintain the Content Modifier
+## 9. Maintain the Content Modifier
 
 1. If you select the **Set Header for MDI Instance ID** Script in Integration Process pool, the quick menu appears. Choose the **Plus** icon of the quick menu.
 
@@ -278,7 +324,7 @@ Use the HTTP receiver adapter to communicate with SAP Master Data Integration us
 
 7. Choose **Save**.
 
-## 9. Maintain the Message Mapping
+## 10. Maintain the Message Mapping
 
 In the following, we need to map to the format that is required to trigger the Master Data Integration. For your convenience, we have provided a reusable message mapping artifact which maps the XML format of the SAP ECC IDoc to the JSON format of the SAP MDI. 
 
@@ -320,7 +366,7 @@ In the following, we need to map to the format that is required to trigger the M
 
 10. Choose **Save**.
 
-## 10. Maintain the Request Reply
+## 11. Maintain the Request Reply
 
 1. If you select the Message Mapping **Mapping Cost Center Fields** of the Integration Process pool, the quick menu appears. Choose the **Plus** icon of the quick menu.
 
@@ -336,7 +382,7 @@ In the following, we need to map to the format that is required to trigger the M
 
 4. Choose **Save**.
 
-## 11. Maintain the connection to your MDI Adaptor
+## 12. Maintain the connection to your MDI Adaptor
 
 We will use SAP Master Data Integration (MDI) receiver adapter to synchronize your master data from SAP applications like SAP ECC and other third-party applications with SAP MDI service.
 
@@ -357,7 +403,7 @@ We will use SAP Master Data Integration (MDI) receiver adapter to synchronize yo
 
 	![cpi](./images/cpi-mdi-conn.png)
 
-3. In the properties of the **MDI** connection, switch to tab **Processing**
+4. In the properties of the **MDI** connection, switch to tab **Processing**
 	1. In the **Operation** field, enter **ForcePatch**
 	2. In the **Change Token Prefix** field, enter **CPIMD**
 	3. In the **Retry Interval (in seconds)** dropdown, choose **05**
@@ -367,16 +413,55 @@ We will use SAP Master Data Integration (MDI) receiver adapter to synchronize yo
 
 		| **Application** |  **Tenant** | **Type** |**Additional Context** | **LocalId** | **Status** | **LocalId Source** |
 		| ----------- | ----------- |  ----------- |  ----------- | ----------- | ----------- | ----------- | 
-		| **s4** | **S4ACLNT000**  | **sap.odm.finance.costobject.CostCenter** | **sap.oitc.888** |  **${property.cost}** | **active** | **Property** |
+		| **s4** | **S4ACLNT000**  | **sap.odm.finance.costobject.CostCenter** | **sap.oitc.888** |  **${header.cost}** | **active** | **Property** |
 
 
 ![cpi](./images/cpi-mdi-process.png)
 
-4. Choose **Save**.
+5. Choose **Save**.
 
-5. Your final layour look below:
+## 12 . Add Exception Subprocess
+
+1.  From the quick menu, choose the **Process** icon and then choose **Exception Subprocess**
+
+	![cpi](./images/cpi-mdi-exception.png)
+
+2. Drag it on the Editor.
+
+3. Choose **Save**.
+
+4. Your final layour look below:
 
 	![cpi](./images/cpi-mdi-final.png)
+
+## 13. Deploy the iflow
+
+1. Within the integration flow editor , Choose **Deploy**.
+
+	![cpi](./images/cpi-mdi-deploy.png)
+
+2. You will get a popup for confirmation. Choose **Yes**.
+
+	![cpi](./images/cpi-mdi-confirm.png)
+
+3. You will get a confirmation message that deployment is success.
+
+## 14. Get the EndPoint of Deployed iflow
+
+Onc your iflow is deployed, you will get a deployed URL, which we be later using while configuring backend.
+
+1. Expand the Navigation pane and switch to the **Monitor > Integrations**
+
+	![cpi](./images/cpi-mon.png)
+
+2. In the **Manage Integration Content**, choose the tile which is started.
+
+	![cpi](./images/cpi-mon-start.png)
+
+3. Copy the Endpoint which we be later using while configuring backend.
+
+	![cpi](./images/cpi-mon-endpoint.png)
+
 
 
 

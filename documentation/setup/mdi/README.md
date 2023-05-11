@@ -24,11 +24,12 @@ To connect a client to a tenant of Master Data Integration service, create a ser
     ```json
         {
         "enableTenantDeletion": true,
-        "writePermissions": [
-            {
-            "entityType": "sap.odm.finance.costobject.CostCenter"
-            }
-        ]
+        "writePermissions": 
+            [
+                {
+                "entityType": "sap.odm.finance.costobject.CostCenter"
+                }
+            ]
         }
     ```
     8. Choose **Create**.
