@@ -328,31 +328,33 @@ Use the HTTP receiver adapter to communicate with SAP Master Data Integration us
 
 In the following, we need to map to the format that is required to trigger the Master Data Integration. For your convenience, we have provided a reusable message mapping artifact which maps the XML format of the SAP ECC IDoc to the JSON format of the SAP MDI. 
 
-1. First of all, we need to add the reusable message mapping to the resources of your integration flow. In the properties of your integration flow, switch to the Resources tab
+1. First of all, we need to add the reusable message mapping to the resources of your integration flow. Download the message mapping [CostMDIMap.zip](https://github.com/SAP-samples/cloud-mdi-integration/blob/main/CostMdiMap.zip) and save into your local file.
 
-2. Below the Resources tab, switch to the References tab
+2. In the properties of your integration flow, switch to the Resources tab
 
-3. From the Add References menu at the right, select the Message Mapping entry
+3. Below the Resources tab, switch to the References tab
+
+4. From the Add References menu at the right, select the Message Mapping entry
 
 	![cpi](./images/cpi-msg.png)
 
-4. Choose the message mapping Map **CostMDIMap.zip** from the local and and choose the **Add** button
+5. Choose the message mapping Map **CostMDIMap.zip** from the local and and choose the **Add** button
 
 	![cpi](./images/cpi-msg-add.png)
 
-5. As you can see from the figure below, the mapping has been added to the resources of your integration flow as reference
+6. As you can see from the figure below, the mapping has been added to the resources of your integration flow as reference
 
 	![cpi](./images/cpi-msg-res.png)
 
-6. Let's now use the mapping in your integration flow model. If you select the **Content Modifier** step of the Integration Process pool, the quick menu appears. Select the **Plus** icon of the quick menu. Choose **Message Mapping**.
+7. Let's now use the mapping in your integration flow model. If you select the **Content Modifier** step of the Integration Process pool, the quick menu appears. Select the **Plus** icon of the quick menu. Choose **Message Mapping**.
 
 	![cpi](./images/cpi-msg-map.png)
 
-7. In the properties of the **Message Mapping**, switch to tab **General**. 
+8. In the properties of the **Message Mapping**, switch to tab **General**. 
 
 	1. In the **Name** field, enter **Mapping Cost Center Fields**
 
-8. In the properties of the **Message Mapping**, switch to tab **Processing**. 
+9. In the properties of the **Message Mapping**, switch to tab **Processing**. 
 
 	1. In the **Reference Type** dropdown, choose **Static**.
 	2. In the Resource, Choose **Select** and select Mapping **CostMdiMap.mmap**
@@ -360,11 +362,11 @@ In the following, we need to map to the format that is required to trigger the M
 
 	![cpi](./images/cpi-msg-sel.png)
 
-9. Selected mapping will be reflected in Resource.
+10. Selected mapping will be reflected in Resource.
 
 	![cpi](./images/cpi-msg-resource.png)
 
-10. Choose **Save**.
+11. Choose **Save**.
 
 ## 11. Maintain the Request Reply
 
