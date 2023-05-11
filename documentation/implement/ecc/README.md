@@ -108,7 +108,7 @@ A partner profile contains parameters that define the electronic interchange of 
 6. In the **Agent** field, enter your technical user id, 
 7. In the **Lang** field, enter **EN** 
 8. Choose **+** button of the **Outbound parmtrs**
-9. In the **Message Type** field, enter **ODTF-CCTR**
+9. In the **Message Type** field, enter **ODTF_CCTR**
 10. In the **Receiver Port** field, enter **CC_CPI**
 11. In the **Basic Type** field, enter **ODFT_CCTR01**
 12. Choose **Save**
