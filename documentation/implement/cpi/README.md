@@ -72,7 +72,7 @@ You use this procedure to create an integration flow for enabling communication 
 
 Here you can either **import our ready made iFlow** and skip all the below steps of manual creation or else **follow the manual iflow creation** for your learning.
 
-### Import Ready Made iFlow**
+### 3.1 Import Ready Made iFlow
 
 Download the **Master.Data.Synchornization.Between.SAP.and.Legacy.System.using.SAP.Cloud.Integration.zip** file from [Releases](https://github.com/SAP-samples/cloud-mdi-integration/releases/tag/v1.0.0-alpha) and save into your local file.
 
@@ -98,7 +98,7 @@ Download the **Master.Data.Synchornization.Between.SAP.and.Legacy.System.using.S
 
 5. Once the deployment is done, skip all the below steps and directy jump to section 14 **Get the EndPoint of Deployed iflow** .
 
-### Manual Create iFlow**
+### 3.2 Manual Create iFlow
 
 Here you will create iflow from scratch which will help you in much more better understanding of implementation.
 
