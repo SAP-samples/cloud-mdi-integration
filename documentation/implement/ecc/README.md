@@ -44,8 +44,9 @@ The purpose of this activity is to create a logical system for your SAP ERP syst
 
 1. Call Transaction **/nBD54**. 
 2. Switch to the **Edit Mode**.
-3. In the **Log.System** field, **S4ACLNT200**.
-4. In the **Name** field, enter descrtiption **S4A CLNT 200**.
+3. In the **Log.System** field, **S4ACLNT000**.
+   > The **000** is the development client and it might vary based on ECC system.
+4. In the **Name** field, enter descrtiption **S4A CLNT 000**.
 5. In the **Log.System** field, enter **CPI_BR**.
 6. In the **Name** field, enter descrtiption **CPI BR**.
 7. Choose **Save**.
@@ -71,7 +72,8 @@ The applications that communicate with each other in your distributed systems ar
 5. In the **Model View**, choose **ERP to ECC Cost Center Replication**
 6. Choose **Add Message Type**
 
-    1. In the **Sender** field, enter **S4ACLNT200**
+    1. In the **Sender** field, enter **S4ACLNT000**
+       > The **000** is the development client and it might vary based on ECC system.
     2. In the **Reciever** field, enter **CPI_BR**
     3. In the **Message Type** field, enter **ODTF_CCTR**
     4. Choose **enter**
