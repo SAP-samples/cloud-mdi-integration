@@ -72,7 +72,8 @@ The applications that communicate with each other in your distributed systems ar
 5. In the **Model View**, choose **ERP to ECC Cost Center Replication**
 6. Choose **Add Message Type**
 
-    1. In the **Sender** field, enter **S4ACLNT200**
+    1. In the **Sender** field, enter **S4ACLNT000**
+       > The **000** is the development client and it might vary based on ECC system.
     2. In the **Reciever** field, enter **CPI_BR**
     3. In the **Message Type** field, enter **ODTF_CCTR**
     4. Choose **enter**
