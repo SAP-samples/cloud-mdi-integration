@@ -44,8 +44,9 @@ The purpose of this activity is to create a logical system for your SAP ERP syst
 
 1. Call Transaction **/nBD54**. 
 2. Switch to the **Edit Mode**.
-3. In the **Log.System** field, **S4ACLNT200**.
-4. In the **Name** field, enter descrtiption **S4A CLNT 200**.
+3. In the **Log.System** field, **S4ACLNT000**.
+   > The **000** is the development client and it might vary based on ECC system.
+4. In the **Name** field, enter descrtiption **S4A CLNT 000**.
 5. In the **Log.System** field, enter **CPI_BR**.
 6. In the **Name** field, enter descrtiption **CPI BR**.
 7. Choose **Save**.
