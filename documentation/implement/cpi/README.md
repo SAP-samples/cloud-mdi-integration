@@ -1,4 +1,4 @@
-# Configure Integration in SAP Cloud Integration
+# Design and Deploy Integration Flow
 
 A key part of an SAP Cloud Integration project is to develop integration flows. An integration flow allows you to specify how SAP Cloud Integration is to process a message. SAP Cloud Integration provides a modeling environment that allows you to design the details of message processing (its senders and receivers as well as the individual processing steps) with a graphical user interface.
 
@@ -22,17 +22,14 @@ The Manage Security Material area provides an overview of security-related artif
 
 	![cpi](./images/cpi-clnt.png)
 
-6. In the **Create OAuth2 Credentials wizard**, entered below:
+6. In the **Create OAuth2 Credentials wizard**, enter below:
 
 	1. In the **Name** field, enter **MDICredential**
-		> This name will be used later in iflow.
+	   > This name will be used later in iflow.
 	2. In the **Description** field, enter **MDI Connection**
-	3. In the **Token Service URL** field, enter **MDI url/oAuth/Token**
-       > You will find url from **uaa.url** in **MDI Service Key**
-	4. In the **Client ID** field, enter **MDI Client ID**
-	   > You will find Client ID from **uaa.clientid** in MDI Service Key.
-	5. In the **Client Secret** field, enter **MDI Client Secret**
-	   > You will find Client Secret from **uaa.clientsecret** in **MDI Service Key**
+	3. In the **Token Service url** field, enter url/oauth/Token*. You will find **url** from **uaa.url** in **MDI Service Key**.
+	4. In the **Client ID** field, enter client id which will get from **uaa.clientid** in MDI Service Key.
+	5. In the **Client Secret** field, enter client secret which you will find from **uaa.clientsecret** in **MDI Service Key**
 	6. In the **Client Authentication** dropdown, chooe **Send as Request Header**.
 	7. In the **Content Type** dropdown, chooe **application/json**.
 	8. Choose **Deploy**.
@@ -53,8 +50,8 @@ An integration flow should be associated with an integration package. Here we wi
 	![cpi](./images/cpi-design-create.png)
 
 4. In the new package:
-	1. In the **Name** field, enter **Cost Center Replication from ECC to Successfactor via MDI**
-	2. In the **Short Description** field, enter **Cost Center Replication from ECC to Successfactor via MDI**
+	1. In the **Name** field, enter **Cost Center Replication from ECC to SuccessFactors via MDI**
+	2. In the **Short Description** field, enter **Cost Center Replication from ECC to SuccessFactors via MDI**
 
 	![cpi](./images/cpi-header.png)
 
@@ -77,7 +74,7 @@ Here you can either **import our ready made iFlow** and skip all the below steps
 Download the **Master.Data.Synchornization.Between.SAP.and.Legacy.System.using.SAP.Cloud.Integration.zip** file from [Releases](https://github.com/SAP-samples/cloud-mdi-integration/releases/tag/v1.0.0-alpha) and save into your local file.
 
 1. In the **Add Integration Flow** dialog:
-    1. Choose **Import**
+    1. Choose **Upload**
 	2. In the **Integration Flow** field, choose **Browse**
 	3. Choose **Master.Data.Synchornization.Between.SAP.and.Legacy.System.using.SAP.Cloud.Integration.zip** from local file.
 	4. Choose **OK**
@@ -88,7 +85,7 @@ Download the **Master.Data.Synchornization.Between.SAP.and.Legacy.System.using.S
 
 	![cpi](./images/cpi-iflow-configure.png)
 
-3. In the **<MDIURI>** field, enter MDI URI you get from service key.
+3. In the field **MDIURI**, enter MDI uri you get from service key.
 
 	![cpi](./images/cpi-mdi-key.png)
 

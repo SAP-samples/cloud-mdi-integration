@@ -1,4 +1,4 @@
-## Configure SAP Successfactor
+## Configure SAP SuccessFactors
 
 In the section, we will see how to configure Business Scenarios in SAP Successfactor to enable cost center replication from SAP Master Data Integration.
 
@@ -10,7 +10,7 @@ In the section, we will see how to configure Business Scenarios in SAP Successfa
 3. In the **Active** section, choose **On**.
 4. In the **Actions**, Choose **Edit**
 5. In the **REST API URL** field, enter MDI Rest endpoint which you can get it from service key of MDI.
-6. In the **Operation Name**, enter**create**
+6. In the **Operation Name**, enter **create**.
 7. In the **OAuth Configurations** field, choose **Click to manage OAuth Configurations**.
 
     ![sf](./images/scenario-rest.png)
@@ -22,7 +22,7 @@ In the section, we will see how to configure Business Scenarios in SAP Successfa
     4. In the **Grant Type**, choose **Client_Credentials**
     5. In the **Client ID** field, enter client ID which you can get it from service key of MDI
     6. In the **Client Secret** field, enter client Secret which you can get it from service key of MDI
-    7. In the **Token URL** field, enter URL+/outh/token. (you can get URL from service key of MDI)
+    7. In the **Token URL** field, enter **URL**/oauth/token. you can get URL from service key of MDI
     8. Choose **Save**
 
     ![sf](./images/oauth.png)

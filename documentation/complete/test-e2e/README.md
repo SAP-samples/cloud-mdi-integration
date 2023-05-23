@@ -5,7 +5,7 @@
 1. Login to GUI.
 2. Enter Transaction **KS01**.
 3. In the **Create Cost Center: Initial Screen** , enter below:
-    1. Enter **Controlling Area**.
+    1. Enter **Controlling Area**. You can choose the list of controlling area from screen F4 dropdown.
     2. In the **Cost Center** field, enter **10030**.
        > If this exists, then enter next number.
     3. In the **Valid From** field, choose **Current Date**.
@@ -42,12 +42,13 @@
     2. In the **Logical System** field, enter **S4ACLNT000**.
     3. Tick **Use cost center ID in brackets if decription is missing**.
     4. Tick **Replicate all languages**
-    4. In the **Receiver Partner No.** field, enter **CPI_BR**.
-    5. In the **Processing Mode**, choose **Send IDOC**.
+    5. In the **Receiver Partner No.** field, enter **CPI_BR**.
+    6. In the **Processing Mode** field, choose **Send IDOC**.
+    7. In the **Start Date** field, choose current date from dropdown.
 
     ![test](./images/ecc-report-screen1.png)
 
-    6. Choose **Execute** to run the report.
+    8. Choose **Execute** to run the report.
 
     ![test](./images/ecc-report-screen2.png)
 
@@ -62,7 +63,7 @@
 
     ![test](./images/ci-mon.png)
 
-3. In the *Monitor Message Processing**, choose **All Intgrarion Flows Messages**
+3. In the **Monitor Message Processing**, choose **All Integrartion Flows Messages**
 
     ![test](./images/ci-mon-all.png)
 
