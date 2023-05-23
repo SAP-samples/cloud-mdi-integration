@@ -6,8 +6,7 @@
 2. Enter Transaction **KS01**.
 3. In the **Create Cost Center: Initial Screen** , enter below:
     1. Enter **Controlling Area**. You can choose the list of controlling area from screen F4 dropdown.
-    2. In the **Cost Center** field, enter **10030**.
-       > If this exists, then enter next number.
+    2. In the **Cost Center** field, enter **10030**. If this number exists, then enter next number.
     3. In the **Valid From** field, choose **Current Date**.
 
 4. Choose **Master Data**.
@@ -22,9 +21,8 @@
     4. Enter **Cost Center Category**.
     5. Enter **Hierarchy area**.
     6. Enter **Currency**.
-    7. Enter **Profit Center**.
-     > Few of the above entries is dependent on the master data maintained in your ECC system.
-    8. Chooe **Save**.
+    7. Enter **Profit Center**. Few of the above entries is dependent on the master data maintained in your ECC system.
+    8. Choose **Save**.
 
     ![test](./images/ecc-cost-cr1-save.png)
 
