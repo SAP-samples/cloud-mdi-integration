@@ -24,10 +24,9 @@ The Manage Security Material area provides an overview of security-related artif
 
 6. In the **Create OAuth2 Credentials wizard**, enter below:
 
-	1. In the **Name** field, enter **MDICredential**
-	   > This name will be used later in iflow.
+	1. In the **Name** field, enter **MDICredential**. This name will be used later in iflow.
 	2. In the **Description** field, enter **MDI Connection**
-	3. In the **Token Service url** field, enter url/oauth/Token*. You will find **url** from **uaa.url** in **MDI Service Key**.
+	3. In the **Token Service url** field, enter **url**/oauth/token. You will find **url** from **uaa.url** in **MDI Service Key**.
 	4. In the **Client ID** field, enter client id which will get from **uaa.clientid** in MDI Service Key.
 	5. In the **Client Secret** field, enter client secret which you will find from **uaa.clientsecret** in **MDI Service Key**
 	6. In the **Client Authentication** dropdown, chooe **Send as Request Header**.
