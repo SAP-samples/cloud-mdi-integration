@@ -44,14 +44,13 @@ The purpose of this activity is to create a logical system for your SAP ERP syst
 
 1. Call Transaction **/nBD54**. 
 2. Switch to the **Edit Mode**.
-3. In the **Log.System** field, **S4ACLNT000**.
-   > The **000** is the development client and it might vary based on ECC system.
-4. In the **Name** field, enter descrtiption **S4A CLNT 000**.
-5. In the **Log.System** field, enter **CPI_BR**.
+3. In the **Log.System** field, enter **S4ACLNT000**. The **000** is the development client and it might vary based on ECC system.
+4. In the **Name** field, enter description **S4A CLNT 000**.
+5. In the **Log.System** field, enter **CPI_BR**. Please note that it is suggested to use your custom Z namespace like ZCPI_BR.
 6. In the **Name** field, enter descrtiption **CPI BR**.
 7. Choose **Save**.
 
-    ![ecc](./images/logical_sys.png)
+![ecc](./images/logical_sys.png)
 
 ## 3. Create a Distribiution Model
 
@@ -72,8 +71,7 @@ The applications that communicate with each other in your distributed systems ar
 5. In the **Model View**, choose **ERP to ECC Cost Center Replication**
 6. Choose **Add Message Type**
 
-    1. In the **Sender** field, enter **S4ACLNT000**
-       > The **000** is the development client and it might vary based on ECC system.
+    1. In the **Sender** field, enter **S4ACLNT000**  The **000** is the development client and it might vary based on ECC system.
     2. In the **Reciever** field, enter **CPI_BR**
     3. In the **Message Type** field, enter **ODTF_CCTR**
     4. Choose **enter**
@@ -87,39 +85,41 @@ The applications that communicate with each other in your distributed systems ar
 In this port type, you specify the RFC destination and the content type of the XML messages.
 
 1. Call Transaction **/nWE21**
-2. Choose **XML HTTP > CC_CPI**
+2. Choose **XML HTTP**
 3. Choose **Create**
-4. In the **Content Type** field, choose **Application/x-sap.idoc**
-5. In the **RFC destination** field, enter **S4A_CPI_COST_CENTER** 
-6. In the **HTTP Version**, choose **Version 1.0**
-7. Enable **SOAP Protocol**
-8. Choose **Save**
+4. In the **Port** field, enter **CC_CPI**
+5. In the **Description** field, enter **ERP to EC Cost Center Replication**
+6. In the **Content Type** field, choose **Application/x-sap.idoc**
+7. In the **RFC destination** field, enter **S4A_CPI_COST_CENTER** 
+8. In the **HTTP Version**, choose **Version 1.0**
+9. Enable **SOAP Protocol**
+10. Choose **Save**
 
     ![ecc](./images/idoc-port.png)
-
 
 ## 5. Defining a Partner Profile
 
 A partner profile contains parameters that define the electronic interchange of data between systems using the IDoc interface. Only one partner profile is required per Data Hub installation. The partner profile must contain all parameters required by your scenario to replicate data between the SAP ECC and SAP Cloud Integration.
 
 1. Call Transaction **/nWE20**.
-2. Choose **Partner Type LS > CPI_BR**
+2. Choose **Partner Type LS**.
 3. Choose **Create**
-4. Choose **Post processing permitted agent**
-5. In the **Ty** field, enter **US**.
-6. In the **Agent** field, enter your technical user id, 
-7. In the **Lang** field, enter **EN** 
-8. Choose **+** button of the **Outbound parmtrs**
-9. In the **Message Type** field, enter **ODTF_CCTR**
-10. In the **Receiver Port** field, enter **CC_CPI**
-11. In the **Basic Type** field, enter **ODFT_CCTR01**
-12. Choose **Save**
+4. In the **Partner No.** field, enter **CPI_BR**
+5. Choose **Post processing permitted agent**
+6. In the **Ty** field, enter **US**.
+7. In the **Agent** field, enter your technical user id, 
+8. In the **Lang** field, enter **EN** 
+9. Choose **+** button of the **Outbound parmtrs**
+10. In the **Message Type** field, enter **ODTF_CCTR**
+11. In the **Receiver Port** field, enter **CC_CPI**
+12. In the **Basic Type** field, enter **ODTF_CCTR01**
+13. Choose **Save**
 
     ![ecc](./images/idoc-partner-profile.png)
 
-13. In the **Message Type** field, Double click on **ODTF_CCTR**
-14. In the **Output Mode**, choose **Pass IDoc Immediately**
-15. Choose **Save**
+14. In the **Message Type** field, Double click on **ODTF_CCTR**
+15. In the **Output Mode**, choose **Pass IDoc Immediately**
+16. Choose **Save**
 
     ![ecc](./images/partner-profile.png)
 
