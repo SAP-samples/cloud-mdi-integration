@@ -2,7 +2,7 @@
 
 1. Navigate to [SAP Software Center](https://launchpad.support.sap.com/#/softwarecenter/search/ODTFINCC) to download the addon.
 2. You can access the Software Center from SAP ONE Support LaunchpadInformation published on SAP site by choosing **Software Downloads**.
-3. For the installation you will need the installation package **ODTFINCC==600** and the below service packs.
+3. For the installation you will need the installation package **SAPK-600AGINODTFINCC** and the below service packs.
 
     | **Service Packs**  |
     |-----------------------------------|
