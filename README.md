@@ -1,3 +1,10 @@
+# Important Notice
+
+This public repository is read-only and no longer maintained.
+
+![](https://img.shields.io/badge/STATUS-NOT%20CURRENTLY%20MAINTAINED-red.svg?longCache=true&style=flat)
+
+---
 ## Master Data Synchornization Between SAP and Legacy System using SAP Cloud Integration
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/cloud-mdi-integration)](https://api.reuse.software/info/github.com/SAP-samples/cloud-mdi-integration)
 
